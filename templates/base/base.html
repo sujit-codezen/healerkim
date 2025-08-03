@@ -1,0 +1,366 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <style>
+      #pageMessages {
+        position: fixed;
+        top: 70px;
+        width: 400px;
+        right: 0px;
+        float: right;
+      }
+      .align-right {
+        -webkit-box-pack: end;
+        justify-content: flex-end;
+        float: right;
+      }
+      .alert {
+        position: relative;
+      }
+
+      .alert .close {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        font-size: 1em;
+      }
+
+      .alert .fa {
+        margin-right: 0.3em;
+      }
+    </style>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" />
+    <!-- Meanmenu CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/meanmenu.css' %}" />
+    <!-- Icofont CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/icofont.min.css' %}" />
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}" />
+    <!-- Magnific CSS -->
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/css/magnific-popup.css' %}"
+    />
+    <!-- Owl CSS -->
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/css/owl.carousel.min.css' %}"
+    />
+    <!-- Theme CSS -->
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/css/owl.theme.default.min.css' %}"
+    />
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}" />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}" />
+
+    <title>Healerkim</title>
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static 'assets/img/logo.png' %}"
+    />
+  </head>
+  <body cz-shortcut-listen="true">
+    <!-- Start Preloader Area -->
+    <div class="preloader" style="display: none">
+      <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+      </div>
+    </div>
+    <!-- End Preloader Area -->
+
+    <!-- Header Area -->
+    <header class="header-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-8">
+            <ul class="header-info">
+              <li>
+                <i class="flaticon-clock-circular-outline"></i>
+                Monday to Friday 19:15 to 21:00
+              </li>
+
+              <li>
+                <i class="flaticon-call-answer"></i>
+                Call Us: +46768546136
+              </li>
+
+              <li>
+                <i class="flaticon-envelope"></i>
+                <a href="mailto:storlappen@hotmail.se">storlappen@hotmail.se</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-4">
+            <ul class="social-links">
+              <li>
+                <a
+                  href="https://www.facebook.com/profile.php?id=100089361271957 "
+                  ><i class="flaticon-facebook-logo"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#"><i class="flaticon-twitter"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="flaticon-pinterest"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="flaticon-linkedin"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- End Header Area -->
+
+    <!-- Start Navbar Area -->
+    <div class="navbar-area header-sticky">
+      <div class="jian-mobile-nav">
+        <div class="logo">
+          <a href="/"
+            ><img src="{% static 'assets/img/logo.png' %}" alt="Logo"
+          /></a>
+        </div>
+      </div>
+
+      <div class="jian-nav">
+        <div class="container">
+          <nav class="navbar navbar-expand-md navbar-light">
+            <a class="navbar-brand" href="/"
+              ><img src="{% static 'assets/img/logo.png' %}" alt="logo" />
+            </a>
+
+            <div
+              class="collapse navbar-collapse mean-menu"
+              id="navbarSupportedContent"
+              style="display: block"
+            >
+              {% if page_name == 'home' %}
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a href="#" class="nav-link active">Home</a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="#aboutus" class="nav-link">About Us</a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="#services" class="nav-link">Services</a>
+                </li>
+
+                <!-- <li class="nav-item">
+                  <a href="#" class="nav-link">Pages</a>
+                  <ul class="dropdown-menu">
+                    <li class="nav-item">
+                      <a href="about.html" class="nav-link">About Us</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a href="services.html" class="nav-link">Services</a>
+                    </li>
+                  </ul>
+                </li> -->
+
+                <li class="nav-item">
+                  <a href="#contact" class="nav-link">Contact</a>
+                </li>
+              </ul>
+              {% else %}
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a href="/" class="nav-link active">Home</a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="/#aboutus" class="nav-link">About Us</a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="/#services" class="nav-link">Services</a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="/#contact" class="nav-link">Contact</a>
+                </li>
+              </ul>
+              {% endif %}
+
+              <div class="others-options">
+                <a href="/booking/" class="btn btn-primary">Book Appointment</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <!-- End Navbar Area -->
+    {% if messages %} {% for message in messages %}
+    <div
+      id="pageMessages"
+      class="pageMessages col-lg-4 col-sm-10 col-xs-10 col-md-6 align-right"
+      style="z-index: 999"
+    >
+      <div
+        class="alert animated flipInX alert-{{ message.tags }} alert-dismissible"
+      >
+        <strong
+          ><i class="fa fa-thumbs-up"></i>{% if message.tags == 'warning' %}
+          Error! {% else %} Success! {% endif %}&nbsp;</strong
+        >
+        {{ message }}
+        <span class="close" data-dismiss="alert">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+    </div>
+    {% endfor %} {% endif %} {% block content %} {% endblock %}
+
+    <!-- Footer section -->
+    <section class="footer-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="footer-image">
+              <img src="{% static 'assets/img/logo.png' %}" alt="img" />
+            </div>
+            <div class="footer-item">
+              <p>
+                Specializing in addressing a range of physical and emotional
+                challenges, including but not limited to ankle problems, knee
+                problems, hip problems, stomach problems, heartbreak, past life
+                and current life trauma, as well as neck, shoulder and back
+                problems.
+              </p>
+
+              <ul class="footer-links">
+                <li>
+                  <a href="#"><i class="flaticon-facebook-logo"></i></a>
+                </li>
+                <!--   <li>
+                  <a href="#"><i class="flaticon-twitter"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="flaticon-instagram"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="flaticon-google-plus-symbol"></i></a>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="menu-item">
+              <div class="footer-content">
+                <h2>Physio Services</h2>
+              </div>
+              <ul class="physio-menu">
+                <li><a href="#"> All Services</a></li>
+                <li><a href="#"> Hostolic Healing</a></li>
+                <li><a href="#"> Spiritual Surgery</a></li>
+                <!--  <li><a href="#"> Movement Analysis</a></li>
+                <li><a href="#"> Sports Injuries</a></li>
+                <li><a href="#">Sports Message</a></li> -->
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="menu-item-content">
+              <div class="footer-content">
+                <h2>Quick LInks</h2>
+              </div>
+              <ul class="quick-menu">
+                <li><a href="#"> Home</a></li>
+                <li><a href="#"> About</a></li>
+                <li><a href="#"> Services</a></li>
+
+                <li><a href="/booking/">Book Appointment</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="footer-content">
+              <h2>Address</h2>
+            </div>
+            <div class="footer-info">
+              <h3><i class="flaticon-call-answer"></i>+46768546136</h3>
+              <h3>
+                <i class="flaticon-placeholder"></i>795 31,
+                <span>Rättvik.</span>
+              </h3>
+              <h3>
+                <i class="flaticon-envelope"></i
+                ><a href="#">storlappen@hotmail.se</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Footer section -->
+
+    <!-- Footer-bottom section -->
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="bottom-content">
+          <p>
+            Copyright © 2021 moretechglobal. All rights reserved By
+            <a href="https://moretechglobal.com/" target="_blank"
+              >healerkim.se</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- End Footer-bottom section -->
+
+    <!-- jQuery Min JS -->
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <!-- Prpper JS -->
+    <script src="{% static 'assets/js/popper.min.js' %}"></script>
+    <!-- Bootstrap Min JS -->
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <!-- Meanmenu Min JS -->
+    <script src="{% static 'assets/js/jquery.meanmenu.js' %}"></script>
+    <!-- Magnific Min JS -->
+    <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+    <!-- Mixitup Min JS -->
+    <script src="{% static 'assets/js/jquery.mixitup.min.js' %}"></script>
+    <!-- Owl Js-->
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+    <!-- Counterup Js-->
+    <script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>
+    <!-- Waypoints Js-->
+    <script src="{% static 'assets/js/waypoints.min.js' %}"></script>
+    <!-- Main JS -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+    <div id="toTop" class="top-arrow" style="display: none">
+      <i class="flaticon-arrow-pointing-up"></i>
+    </div>
+  </body>
+</html>
